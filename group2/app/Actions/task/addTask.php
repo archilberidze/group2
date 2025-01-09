@@ -13,10 +13,7 @@ class addTask extends Action
 
     public function handle(array $data)
     {
-        $task = new task();
-        $task->tittle =$data['tittle'];
-        $task->description = $data['description'];
-        $task->save();
+       task::create($data);
 
         return response()->json(['message' => 'Task created successfully'],201);
     }
