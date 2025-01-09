@@ -10,11 +10,13 @@ use App\Actions\task\getTask;
 use App\Actions\task\getTasks;
 use App\Actions\task\getTittle;
 use App\Actions\team\addTeam;
+use App\Actions\team\deleteTeam;
 use App\Actions\team\getFilteredTeams;
 use App\Actions\team\getTeam;
 use App\Actions\team\getTeams;
 use App\Actions\task\updateTask;
 
+use App\Actions\team\searchTeams;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -41,5 +43,6 @@ Route::prefix('team')->group(function (){
     Route::get('get_teams', getTeams::class);
     Route::get('get_team', getTeam::class);
     Route::get('get_filtered_team', getFilteredTeams::class);
-
+    Route::get('search_teams', searchTeams::class);
+    Route::delete('delete_team/{id}', deleteTeam::class);
 });
