@@ -12,9 +12,9 @@ class getFilteredTeams extends Action
 {
     public function handle(array $data)
     {
-//        $filteredTeams =  teams::where('championship', $data['championship']) -> get();
-            $filteredTeams = teams::all();
-        return response()->json(new GetTeamsResources($filteredTeams));
+        $filteredTeams =  teams::where('championship', $data['championship']) -> get();
+
+        return response()->json(GetTeamsResources::collection($filteredTeams));
     }
 
     public function asController(GetFilterRequest $request): JsonResponse
