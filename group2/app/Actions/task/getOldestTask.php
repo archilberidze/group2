@@ -9,10 +9,10 @@ use Lorisleiva\Actions\Action;
 
 class getOldestTask extends Action
 {
-    public function handle(array $data)
+    public function handle()
     {
-        $oldestTask = task::oldest('created_at')
-        ->first();
+        $oldestTask = task::oldest('created_at')->first();
+
         return response()->json(new GetTasksResource($oldestTask));
     }
 
