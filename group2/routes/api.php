@@ -17,6 +17,7 @@ use App\Actions\team\getTeams;
 use App\Actions\task\updateTask;
 
 use App\Actions\team\searchTeams;
+use App\Actions\team\updateTeam;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -45,4 +46,5 @@ Route::prefix('team')->group(function (){
     Route::get('get_filtered_team', getFilteredTeams::class);
     Route::get('search_teams', searchTeams::class);
     Route::delete('delete_team/{id}', deleteTeam::class);
+    Route::put('update_team/{id}', updateTeam::class);
 });
