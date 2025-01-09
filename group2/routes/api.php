@@ -8,6 +8,7 @@ use App\Actions\task\addTask;
 use App\Actions\task\getOldestTask;
 use App\Actions\task\getTask;
 use App\Actions\task\getTasks;
+use App\Actions\task\getTittle;
 use App\Actions\team\addTeam;
 use App\Actions\team\getFilteredTeams;
 use App\Actions\team\getTeam;
@@ -22,6 +23,7 @@ Route::prefix('task')->group(function (){
     Route::get('get_tasks', getTasks::class);
     Route::get('get_task', getTask::class);
     Route::get('get_oldest_task', getOldestTask::class);
+    Route::get('get_tittle', GetTittle::class);
     Route::put('update_task/{id}', updateTask::class);
 });
 
@@ -31,7 +33,7 @@ Route::prefix('singers')->group(function (){
     Route::get('get_singers', getSingers::class);
     Route::get('get_singer', getSinger::class);
     Route::get('get_oldest_singer', getOldestSinger::class);
-   
+
 });
 
 Route::prefix('team')->group(function (){
