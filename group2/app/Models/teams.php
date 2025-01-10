@@ -12,4 +12,8 @@ class teams extends Model
         'name',
         'championship',
     ];
+
+    public function scopeTeamNameLike($query, $name){
+        return $query->where('name', 'like', '%'.$name.'%');
+    }
 }

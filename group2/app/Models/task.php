@@ -8,4 +8,9 @@ class task extends Model
 {
     protected $table ='task';
     protected $fillable = ['tittle','description'];
+
+    public function scopeTittleLike($quary,$tittle){
+
+        return $quary->where('tittle','like', '%'.$tittle.'%');
+    }
 }
