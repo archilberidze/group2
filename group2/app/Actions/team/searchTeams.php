@@ -13,16 +13,9 @@ class searchTeams extends Action
     public function handle(array $data){
         $name = $data['name'] ?? null;
         $championship = $data['championship'] ?? null;
-
         $query = teams::query();
-        if($name){
-            $query-> NameLike($name);
-        }
-        if($championship){
-            $query -> ChampionshipLike($championship);
-        }
-
-        return response () -> json(GetTeamsResources::collection($query -> get()) , 201);
+        $query-> NameLike($name) -> ChampionshipLike($championship);
+        return response () -> json(GetTeamsResources::collection($query -> get()) , 200);
     }
 
     public function asController(teamNameRequest $request): JsonResponse {
