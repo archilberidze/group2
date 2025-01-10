@@ -12,6 +12,7 @@ class GetTeamsResources extends JsonResource
             'id' => $this -> resource -> id,
             'name' => $this -> resource -> name,
             'championship' => $this -> resource -> championship,
+            'singers' => GetSingersResourse::collection($this->resource->singers)
         ];
     }
 }

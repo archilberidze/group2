@@ -12,7 +12,9 @@ class getTeams extends  Action
     public function handle()
     {
         $teams = teams::all();
-        return response()->json(GetTeamsResources::collection($teams));
+
+
+       return response()->json(GetTeamsResources::collection($teams));
     }
 
     public function asController(): JsonResponse
