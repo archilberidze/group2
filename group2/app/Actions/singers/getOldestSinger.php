@@ -12,8 +12,7 @@ class getOldestSinger extends Action
 {
     public function handle()
     {
-        $singer = singers::orderBy('age', 'desc')
-            ->first();
+        $singer = singers::orderBy('age', 'desc')->first();
 
         return response()->json(new GetSingersResourse($singer));
 

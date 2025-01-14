@@ -29,6 +29,7 @@ Route::prefix('task')->group(function (){
     Route::get('get_task', getTask::class);
     Route::get('get_tittle', getTittle::class);
     Route::get('get_oldest_task', getOldestTask::class);
+    Route::get('get_tittle', GetTittle::class);
     Route::put('update_task/{id}', updateTask::class);
     Route::delete('delete_task', deleteTask::class);
 });
@@ -41,7 +42,6 @@ Route::prefix('singers')->group(function (){
     Route::get('get_oldest_singer', getOldestSinger::class);
     Route::get('get_name', getName::class);
     Route::delete('delete_singer', deleteSinger::class);
-
 });
 
 Route::prefix('team')->group(function (){
