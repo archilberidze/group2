@@ -29,8 +29,7 @@ class teams extends Model
     }
 
     public function singers(){
-        return $this->belongsToMany
-        (singers::class,  'singers','id','team_id');
+        return $this->belongsToMany(singers::class,  'team_singer','singer_id','team_id');
 
     }
 }
