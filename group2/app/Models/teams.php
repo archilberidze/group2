@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\singers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,6 +11,7 @@ class teams extends Model
     use HasFactory;
 
     protected $table = 'teams';
+
     protected $primaryKey = 'id';
 
     protected $fillable = [
@@ -29,5 +31,6 @@ class teams extends Model
     public function singers(){
         return $this->belongsToMany
         (singers::class,  'singers','id','team_id');
+
     }
 }
