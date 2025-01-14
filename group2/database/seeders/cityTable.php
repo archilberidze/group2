@@ -22,13 +22,13 @@ class cityTable extends Seeder
 
 
         $cities = [
-            ['name'=>'Tbilisi', 'country_id'=> $country1->id],
-            ['name'=>'Kutaisi', 'country_id'=> $country1->id],
-            ['name'=>'Samtredia', 'country_id'=> $country1->id],
-            ['name'=>'Istanbul', 'country_id'=>$country2->id],
-            ['name'=>'Paris', 'country_id'=>$country3->id],
-            ['name'=>'Madrid', 'country_id'=>$country4->id],
-            ['name'=>'Rome', 'country_id'=>$country5->id],
+            ['name'=>'Tbilisi', 'country_id'=> $country1->id, 'population' => 1],
+            ['name'=>'Kutaisi', 'country_id'=> $country1->id,'population' => 1],
+            ['name'=>'Samtredia', 'country_id'=> $country1->id,'population' => 1],
+            ['name'=>'Istanbul', 'country_id'=>$country2->id,'population' => 1],
+            ['name'=>'Paris', 'country_id'=>$country3->id,'population' => 1],
+            ['name'=>'Madrid', 'country_id'=>$country4->id,'population' => 1],
+            ['name'=>'Rome', 'country_id'=>$country5->id,'population' => 1],
         ];
 
         foreach ($cities as $city) {
