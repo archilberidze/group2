@@ -1,5 +1,7 @@
 <?php
 
+use App\Actions\cars\addCar;
+use App\Actions\cars\GetCars;
 use App\Actions\singers\addSinger;
 use App\Actions\singers\deleteSinger;
 use App\Actions\singers\getName;
@@ -51,4 +53,9 @@ Route::prefix('team')->group(function (){
     Route::get('get_filtered_team', getFilteredTeams::class);
     Route::get('get_team_name', getTeamName::class);
     Route::delete('delete_team', deleteTeam::class);
+});
+
+Route::prefix('car')->group(function (){
+   Route::post('add_car', addCar::class);
+    Route::get('get_cars', GetCars::class);
 });
