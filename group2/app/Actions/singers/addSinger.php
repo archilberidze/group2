@@ -13,6 +13,7 @@ class addSinger extends Action
         $singer = new singers();
         $singer->name= $data['name'];
         $singer->age= $data['age'];
+        $singer->team_id = $data['team_id'];
         $singer->save();
 
         return response() -> json(['message'=>'singer added'], 201);
