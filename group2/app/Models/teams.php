@@ -19,6 +19,9 @@ class teams extends Model
         'name',
         'championship',
     ];
+  
+    public function scopeChampionshipLike($query, $championship){
+        return $query->where('championship', 'like', '%'.$championship.'%');
 
     public function scopeTeamNameLike($query, $name){
         return $query->where('name', 'like', '%'.$name.'%');
@@ -30,6 +33,5 @@ class teams extends Model
 
     public function singers(){
         return $this->belongsToMany(singers::class,  'team_singer','singer_id','team_id');
-
     }
 }
