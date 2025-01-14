@@ -12,7 +12,7 @@ class GetCarRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id' =>'required|integer|exists:teams,id'
+            'id' =>'required|integer|exists:cars,id'
         ];
     }
 }
