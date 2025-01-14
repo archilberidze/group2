@@ -12,6 +12,8 @@ class GetSingersResourse extends JsonResource
            'id' => $this -> resource -> id,
            'name' => $this->resource->name,
            'age' => $this->resource->age,
+           'team_id' => $this->resource->team_id,
+
        ];
    }
 }

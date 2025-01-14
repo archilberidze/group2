@@ -14,6 +14,7 @@ class addSingerRequest extends FormRequest
         return [
             'name' => 'required',
             'age' => 'required',
+            'team_id' => 'nullable',
         ];
     }
 }
