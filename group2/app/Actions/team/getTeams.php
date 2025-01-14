@@ -11,8 +11,13 @@ class getTeams extends  Action
 {
     public function handle()
     {
-        $teams = teams::all();
-        return response()->json(GetTeamsResources::collection($teams));
+        try {
+            $teams = teams::all();
+            return response()->json(GetTeamsResources::collection($teams));
+        }catch (\Exception){
+            return response()->json(['message' => 'server error'], 500);
+        }
+
     }
 
     public function asController(): JsonResponse

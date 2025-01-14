@@ -5,14 +5,13 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 
-class GetTeamsResources extends JsonResource
+class GetCarsResources extends JsonResource
 {
     public function toArray(Request $request): array{
         return [
             'id' => $this -> resource -> id,
             'name' => $this -> resource -> name,
-            'championship' => $this -> resource -> championship,
-            'singers' => GetSingersResourse::collection($this->resource->singers)
+            'model' => $this -> resource -> championship,
         ];
     }
 }
